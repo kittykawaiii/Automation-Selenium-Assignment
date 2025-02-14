@@ -25,36 +25,36 @@ public class Assignment {
 
         // Count number of links
 
-        List<WebElement> result_links = driver.findElements(By.xpath("//div[@id='Wikipedia1_wikipedia-search-results']//a"));
-        List<WebElement> total_results = new ArrayList<>(result_links);
+        List<WebElement> resultLinks = driver.findElements(By.xpath("//div[@id='Wikipedia1_wikipedia-search-results']//a"));
+        List<WebElement> totalResults = new ArrayList<>(resultLinks);
         WebElement more = driver.findElement(By.xpath("//a[normalize-space()='More »']"));
-        total_results.add(more);
+        totalResults.add(more);
 
-        System.out.println(total_results.size());
+        System.out.println(totalResults.size());
 
         // Click each link
 
-        for (int i = 0; i < total_results.size(); i++) {
-            total_results.get(i).click();
+        for (int i = 0; i < totalResults.size(); i++) {
+            totalResults.get(i).click();
 
         }
 
         // Get Window ID + title from each Window
 
-        Set<String> Window_IDs = driver.getWindowHandles();
-        List<String> Window_list = new ArrayList<>(Window_IDs);
+        Set<String> WindowIDs = driver.getWindowHandles();
+        List<String> WindowList = new ArrayList<>(WindowIDs);
 
-        for (String win_id : Window_list) {
-            System.out.println("Window ID: "+win_id);
-            driver.switchTo().window(win_id);
+        for (String winId : WindowList) {
+            System.out.println("Window ID: "+winId);
+            driver.switchTo().window(winId);
 
             System.out.println("Current Window Title: " + driver.getTitle());
         }
 
         // Close specific window
 
-        for (String Window_close : Window_IDs) {
-            String title = driver.switchTo().window(Window_close).getTitle();
+        for (String windowClose : WindowIDs) {
+            String title = driver.switchTo().window(windowClose).getTitle();
 
             if (title.equals("Automation Testing Practice"))
             {
