@@ -32,8 +32,8 @@ public class Assignment_day33_2 {
         String text = recordCountElement.getText();
 
         // Extract the number of records from the text
-        int total_records = Integer.parseInt(text.substring(text.indexOf("(") + 1, text.indexOf(")")));
-        System.out.println("Total Records: " + total_records);
+        int totalRecords = Integer.parseInt(text.substring(text.indexOf("(") + 1, text.indexOf(")")));
+        System.out.println("Total Records: " + totalRecords);
 
         // Find all rows in the table
         List<WebElement> rows = driver.findElements(By.xpath(".//div[@class='oxd-table-card']"));
