@@ -13,51 +13,32 @@ public class Assignment {
 
         //System.out.println(driver.getTitle());
 
-        //String window_ID=driver.getWindowHandle();
-        //System.out.println("Window ID: "+window_ID);
+        //String windowID=driver.getWindowHandle();
+        //System.out.println("Window ID: "+windowID);
 
 
         /*driver.findElement(By.xpath("//a[@id='apple']")).click();
-        Set<String> window_IDs=driver.getWindowHandles();
-        System.out.println(window_IDs);
+        Set<String> windowIDs=driver.getWindowHandles();
+        System.out.println(windowIDs);
          */
 
         WebElement logo=driver.findElement(By.xpath("//h1[normalize-space()='Automation Testing Practice']"));
         System.out.println("Display status of logo: "+logo.isDisplayed());
 
         boolean status=driver.findElement(By.xpath("//button[normalize-space()='START']")).isEnabled();
-        System.out.println("Button_status: "+status);
+        System.out.println("Button status: "+status);
 
-        WebElement Sunday_checkbox=driver.findElement(By.xpath("//input[@id='sunday']"));
+        WebElement SundayCheckbox=driver.findElement(By.xpath("//input[@id='sunday']"));
 
         System.out.println("Before selection");
-        System.out.println(Sunday_checkbox.isSelected());
+        System.out.println(SundayCheckbox.isSelected());
 
 
         System.out.println("After selection");
-        Sunday_checkbox.click();
-        System.out.println(Sunday_checkbox.isSelected());
+        SundayCheckbox.click();
+        System.out.println(SundayCheckbox.isSelected());
 
         driver.close();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     }
 }
