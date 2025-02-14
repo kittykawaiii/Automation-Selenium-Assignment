@@ -18,9 +18,9 @@ public class Assignment_1 {
         driver.manage().window().maximize();
 
         WebElement dropdown= driver.findElement(By.xpath("//select[@id='country-list']"));
-        Select dropdown_country = new Select(dropdown);
+        Select dropdownCountry = new Select(dropdown);
 
-        List<WebElement> options= dropdown_country.getOptions();
+        List<WebElement> options= dropdownCountry.getOptions();
         System.out.println(options.size());
 
         for (WebElement option:options)
@@ -28,9 +28,9 @@ public class Assignment_1 {
             System.out.println(option.getText());
         }
 
-        //dropdown_country.selectByVisibleText("USA");
-        //dropdown_country.selectByValue("4");
-        dropdown_country.selectByIndex(1);
+        //dropdownCountry.selectByVisibleText("USA");
+        //dropdownCountry.selectByValue("4");
+        dropdownCcountry.selectByIndex(1);
 
     }
 }
