@@ -21,14 +21,14 @@ public class Assignment {
         driver.manage().window().maximize();
 
         // Select departure city
-        WebElement dropdown_1 = driver.findElement(By.xpath("//select[@name='fromPort']"));
-        Select drp_departure = new Select(dropdown_1);
-        drp_departure.selectByVisibleText("San Diego");
+        WebElement dropdown1 = driver.findElement(By.xpath("//select[@name='fromPort']"));
+        Select drpDeparture = new Select(dropdown_1);
+        drpDeparture.selectByVisibleText("San Diego");
 
         // Select destination city
-        WebElement dropdown_2 = driver.findElement(By.xpath("//select[@name='toPort']"));
-        Select drp_destination = new Select(dropdown_2);
-        drp_destination.selectByVisibleText("New York");
+        WebElement dropdown2 = driver.findElement(By.xpath("//select[@name='toPort']"));
+        Select drpDestination = new Select(dropdown_2);
+        drpDestination.selectByVisibleText("New York");
 
         // Click "Find Flights"
         driver.findElement(By.xpath("//input[@value='Find Flights']")).click();
@@ -92,8 +92,8 @@ public class Assignment {
         driver.findElement(By.xpath("//input[@value='Purchase Flight']")).click();
 
         // Verify that was successful purchase
-        String successful_purchase = driver.getTitle();
-        if (successful_purchase.contains("BlazeDemo Confirmation")) {
+        String successfulPurchase = driver.getTitle();
+        if (successfulPurchase.contains("BlazeDemo Confirmation")) {
             System.out.println("Thank you for your purchase today!");
         } else {
             System.out.println("Failed purchased");
