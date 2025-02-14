@@ -23,8 +23,8 @@ public class Assignment_day33_1 {
         //repeating clicking pages
         for (int p = 1; p <= pages.size(); p++) {
             if (p > 1) {
-                WebElement active_page = driver.findElement(By.xpath("//ul[@id='pagination']//li[" + p + "]"));
-                active_page.click();
+                WebElement activePage = driver.findElement(By.xpath("//ul[@id='pagination']//li[" + p + "]"));
+                activePage.click();
                 Thread.sleep(3000);
             }
 
@@ -32,9 +32,9 @@ public class Assignment_day33_1 {
             int rows = driver.findElements(By.xpath("//table[@id='productTable']//tbody//tr")).size();
 
             for (int r = 1; r <= rows; r++) {
-                String Product_name = driver.findElement(By.xpath("//table[@id='productTable']//tbody//tr[" + r + "]//td[2]")).getText();
-                String Price = driver.findElement(By.xpath("//table[@id='productTable']//tbody//tr[" + r + "]//td[3]")).getText();
-                System.out.println(Product_name + "\t" + Price);
+                String productName = driver.findElement(By.xpath("//table[@id='productTable']//tbody//tr[" + r + "]//td[2]")).getText();
+                String price = driver.findElement(By.xpath("//table[@id='productTable']//tbody//tr[" + r + "]//td[3]")).getText();
+                System.out.println(productName + "\t" + price);
             }
 
             //click all check-boxes in all pages
